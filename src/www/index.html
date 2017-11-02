@@ -21,23 +21,24 @@
 <script src="http://cdn.bootcss.com/geopattern/1.2.3/js/base64.min.js"></script>
 <script src="http://cdn.bootcss.com/geopattern/1.2.3/js/typedarray.min.js"></script>
 <![endif]-->
- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png?1507754657254">
- <link rel="shortcut icon" href="/assets/ico/favicon.ico?1507754657254">
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png?1507754657254">
+<link rel="shortcut icon" href="/assets/ico/favicon.ico?1507754657254">
 <style>
 .thumb {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .thumb div {
-	background: rgba(0, 0, 0, 0.8);
-	width: 100px;
-	height: 30px;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100px;
+  height: 30px;
 }
 
 .thumb div+div {
-	background: red;
-	width: 100px;
-	height: 30px;
+  background: red;
+  width: 100px;
+  height: 30px;
 }
 
 </style>
@@ -46,16 +47,15 @@
 
 <!--
 <div class="thumb">
-	<div></div>
-	<div></div>
+  <div></div>
+  <div></div>
 </div>
-
 <script src="http://cdn.bootcss.com/babel-core/6.1.19/browser.min.js"></script>
+-->
+<div id="app"></div>
 <script src="http://cdn.bootcss.com/systemjs/0.20.19/system.js"></script>
 <script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
--->
-
-
+<script src="app.js"></script>
 <script>
 /*
 
@@ -66,25 +66,25 @@ class PralseButton {
     this.id  = id;
     this.sum = 0;
     this.chars = ['0','1','2','3','4','5','6','7','8','9','A','B',
-    	'C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q',
-    	'R','S','T','U','V','W','X','Y','Z'];
+      'C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q',
+      'R','S','T','U','V','W','X','Y','Z'];
   }
 
-	generateMixed(n) {
-		var res = '';
-		for(var i = 0; i < n ; i ++) {
-			var id = Math.ceil(Math.random()*35);
-			res += this.chars[id];
-		}
-		return res;
-	}
+  generateMixed(n) {
+    var res = '';
+    for(var i = 0; i < n ; i ++) {
+      var id = Math.ceil(Math.random()*35);
+      res += this.chars[id];
+    }
+    return res;
+  }
 
   addOne() {
-  	return ++this.sum;
+    return ++this.sum;
   }
 
   handleClick() {
-  	this.addOne()
+    this.addOne()
   }
 
   render() {
@@ -101,13 +101,13 @@ class PralseButton {
 // Define the child class
 class Thumb extends PralseButton {
   constructor(id, max) {
-  	// 调用父类的constructor(id)
+    // 调用父类的constructor(id)
     super(id);
     this.max = max;
   }
 
   addOne() {
-  	super.addOne();
+    super.addOne();
   }
 
   render() {
@@ -135,4 +135,3 @@ $.fn.CaesarThumb = model;
 </script>
 </body>
 </html>
-
